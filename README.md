@@ -1,21 +1,16 @@
 <p align="center">
-  <a href="https://getbootstrap.com/">
-    <img src="https://getbootstrap.com/assets/brand/bootstrap-solid.svg" alt="" width=72 height=72>
+  <a href="https://weslleymendes.com.br">
+    <img src="https://img.elo7.com.br/product/zoom/26E22DD/painel-adesivo-parede-lanche-fast-food-lanchonete-truck-hd-painel-adesivo-lanche-hamburguer.jpg" alt="" width=72 height=72>
   </a>
 
-  <h3 align="center">Bootstrap</h3>
+  <h3 align="center">WhatsFood</h3>
 
   <p align="center">
-    Sleek, intuitive, and powerful front-end framework for faster and easier web development.
+    Um sistema para automatizar e agilizar a vida de lanchonetes FastFood
     <br>
-    <a href="https://getbootstrap.com/docs/4.0/"><strong>Explore Bootstrap docs »</strong></a>
+  <a href="https://weslleymendes.com.br/whatsFood"><strong>Explore o WhatsFood <b>»</b> </strong></a>
     <br>
-    <br>
-    <a href="https://themes.getbootstrap.com/">Bootstrap Themes</a>
-    ·
-    <a href="https://jobs.getbootstrap.com/">Job Board</a>
-    ·
-    <a href="https://blog.getbootstrap.com/">Blog</a>
+    
   </p>
 </p>
 
