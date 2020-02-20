@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://weslleymendes.com.br">
-    <img src="https://img.elo7.com.br/product/zoom/26E22DD/painel-adesivo-parede-lanche-fast-food-lanchonete-truck-hd-painel-adesivo-lanche-hamburguer.jpg" alt="" width=72 height=72>
+    <img src="https://img.elo7.com.br/product/zoom/26E22DD/painel-adesivo-parede-lanche-fast-food-lanchonete-truck-hd-painel-adesivo-lanche-hamburguer.jpg" alt="" width=100 height=100>
   </a>
 
   <h3 align="center">WhatsFood</h3>
