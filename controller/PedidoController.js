@@ -1,4 +1,4 @@
-/* segurança
+ segurança
 // desabilita as teclas de atalho
 if (document.addEventListener) {
   document.addEventListener("keydown", bloquearSource);
@@ -37,7 +37,6 @@ if (document.addEventListener) {
       return false;
   });
 }
-*/
 
 // adicionar ação ao clique no checkbox
 var checkboxes = document.getElementsByName('Pacote');
