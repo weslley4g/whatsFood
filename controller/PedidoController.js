@@ -38,7 +38,6 @@ if (document.addEventListener) {
   });
 }
 */
-
 // adicionar ação ao clique no checkbox
 var checkboxes = document.getElementsByName('Pacote');
 for (let i = 0; i < checkboxes.length; i++) {
@@ -69,11 +68,6 @@ var nomeArray = [];
 var idPedido = [];
 
 function getValues(elemento) {
-  console.log(pedidosArray);
-  console.log(descArray);
-  console.log(precoArray);
-  console.log(nomeArray);
-  console.log(idPedido);
   elementoID = elemento.id;
   // buscando os elementos no HTML
   var pedidoElement = document.getElementById(elemento.id);
@@ -90,7 +84,7 @@ function getValues(elemento) {
   } else {
     var idPos = 0;
     idPos = idPedido.indexOf(elemento.id);
-    descArray.splice(idPos, 1);
+    descArray.splice(idPos,1);
     pedidosArray.splice(idPos, 1);
     precoArray.splice(idPos, 1);
     nomeArray.splice(idPos, 1);
@@ -99,7 +93,7 @@ function getValues(elemento) {
   // listar os pedidos feitos
   listaDePedidos(elementoID);
   // total da compra
-  CalculoPadido();
+  CalculoPedido();
   // mostrar a quantidade de pedidos
   var qtdPedido = idPedido.length;
   var qtd = document.getElementById("qtdPedido");
@@ -120,6 +114,7 @@ function getValues(elemento) {
 
 // Função de listar os pedidos feitos
 function listaDePedidos(elementoID) {
+
   var pedidoElement = document.getElementById(elementoID);
   var descElement = document.getElementById(elementoID + "D");
   var precoElement = document.getElementById(elementoID + "P");
@@ -135,8 +130,9 @@ function listaDePedidos(elementoID) {
     li.setAttribute("id", elementoID + "SeuPedido")
     // criando a div
     var div = document.createElement("div");
-    // criando o H6
+    // criando o H5
     var h5 = document.createElement("h5");
+    // criando o H6
     var h6 = document.createElement("h6");
     h6.setAttribute("class", "my-0");
     // criando o small
@@ -160,20 +156,22 @@ function listaDePedidos(elementoID) {
     li.appendChild(buttonMenos);
     li.appendChild(buttonMais);
     // texto dentro das tags
-   var textqtd = idPedido.indexOf(elementoID);
+   
     var descricaoText = document.createTextNode(descElement.innerText);
     var nomeDoLancheText = document.createTextNode(nomeElement.innerText);
-    var qtdDoLancheText = document.createTextNode(textqtd);
+    var qtdMais = document.createTextNode("1 Pedido");
+   
     var valorDoLancheText = document.createTextNode(precoElement.innerText);
     var sinaldeMais = document.createTextNode(" + ");
     var sinaldeMenos = document.createTextNode(" - ");
     // colocando os textos certo entre as tags
-    h5.appendChild(qtdDoLancheText);
+    h5.appendChild(qtdMais);
     h6.appendChild(nomeDoLancheText);
     span.appendChild(valorDoLancheText);
     small.appendChild(descricaoText);
     buttonMais.appendChild(sinaldeMais);
     buttonMenos.appendChild(sinaldeMenos);
+    h5.setAttribute("id",elementoID + "+")
     buttonMenos.setAttribute("class", "btn btn-outline-info");
     buttonMais.setAttribute("class", "btn btn-outline-info");
     buttonMenos.style.marginRight = "10px";
@@ -191,17 +189,18 @@ function listaDePedidos(elementoID) {
 
     if (document.getElementById(elementoID + "SeuPedido") !== null) {
       document.getElementById(elementoID + "SeuPedido").remove();
+
     } else {
-      CalculoPadido();
+      CalculoPedido();
 
     }
-
+  
   }
 
 }
 
 // função de calculo de valor
-function CalculoPadido() {
+function CalculoPedido() {
   var verifica = document.getElementById("Total");
   var valorTotal = pedidosArray.reduce(function (total, numero) {
     return total + parseInt(numero);
@@ -242,23 +241,47 @@ function MaisPedidos(ID) {
 
   pedidosArray.push(pedidoElement.value);
   idPedido.push(ID);
-  CalculoPadido();
-  // atualiza a quantidade de pedidos
+  CalculoPedido();
+
+  var text = document.createTextNode(qtdPedido);
+  var qtdElement = document.getElementById(ID + "+");
+  
+  qtdElement.innerHTML = "";
+  qtdElement.appendChild(text);
   var qtdPedido = idPedido.length;
   var qtd = document.getElementById("qtdPedido");
   var text = document.createTextNode(qtdPedido);
   qtd.innerHTML = "";
   qtd.appendChild(text);
-  if (pedidoElement.checked === true) {
-    pedidoElement.checked = false;
-    pedidoElement.setAttribute("aria-disabled", "true");
+  // atualiza a quantidade de pedidos
+  var qtdPedido = 0;
+  for (let index = 0; index < idPedido.length; index++) {
+    if (idPedido[index] === ID) {
+    qtdPedido++
+    }    
+  }
+
+  var text;
+  var qtdElement = document.getElementById(ID + "+");
+  
+  if ( qtd.innerHTML === "1") {
+    qtdElement.innerHTML = "";
+    text = document.createTextNode(qtdPedido + " Pedido");
+    qtdElement.appendChild(text);
+  }else{
+    qtdElement.innerHTML = "";
+    text = document.createTextNode(qtdPedido + " Pedidos");
+    qtdElement.appendChild(text);
   }
 }
 
 // diminuir a quantidade do pedido
 function MenosPedidos(ID) {
+ 
+  
   var verificar = idPedido.indexOf(ID);
-  if (verificar < 0) {
+  console.log(verificar);
+  if (idPedido.indexOf(ID) > -1) {
     document.getElementById(ID + "SeuPedido").remove();
   }
   var idPos = 0;
@@ -271,21 +294,53 @@ function MenosPedidos(ID) {
     idPedido.splice(idPos, 1);
   }
 
-  CalculoPadido();
+  CalculoPedido();
+
+  var text = document.createTextNode(qtdPedido);
+  var qtdElement = document.getElementById(ID + "+");
+
+  qtdElement.innerHTML = "";
+  qtdElement.appendChild(text);
   var qtdPedido = idPedido.length;
   var qtd = document.getElementById("qtdPedido");
   var text = document.createTextNode(qtdPedido);
   qtd.innerHTML = "";
   qtd.appendChild(text);
-  // desmarca o checkbox
-  var pedidoElement = document.getElementById(ID);
-  if (pedidoElement.checked === true) {
-    pedidoElement.checked = false;
+  // atualiza a quantidade de pedidos
+  var qtdPedido = 0;
+  for (let index = 0; index < idPedido.length; index++) {
+    if (idPedido[index] === ID) {
+    qtdPedido++
+    }    
   }
+
+  var text;
+  var qtdElement = document.getElementById(ID + "+");
+  
+  if ( qtd.innerHTML === "1") {
+    qtdElement.innerHTML = "";
+    text = document.createTextNode(qtdPedido + " Pedido");
+    qtdElement.appendChild(text);
+  }else if(qtd.innerHTML === "0"){
+    qtdElement.innerHTML = "";
+    text = document.createTextNode(qtdPedido + " Pedidos");
+    qtdElement.appendChild(text);
+  }
+  
+  
   // verifica se zerou os produtos e remove a coluna
   if (TotalRS === 0) {
     document.getElementById(ID + "SeuPedido").remove();
   }
+  // remove pedido zerado
+  var pedidoZerado = document.getElementById(ID + "+");
+  if (pedidoZerado) {
+    if (pedidoZerado.innerHTML === "0" ||pedidoZerado.innerHTML === null) {
+      document.getElementById(ID + "SeuPedido").remove();
+
+    }
+  }
+  
 
   if (numeroPedido.innerText == 0) {
     infoPedido.hidden = true;
