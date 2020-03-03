@@ -277,13 +277,6 @@ function MaisPedidos(ID) {
 
 // diminuir a quantidade do pedido
 function MenosPedidos(ID) {
- 
-  
-  var verificar = idPedido.indexOf(ID);
-  console.log(verificar);
-  if (idPedido.indexOf(ID) > -1) {
-    document.getElementById(ID + "SeuPedido").remove();
-  }
   var idPos = 0;
   idPos = idPedido.indexOf(ID);
   if (idPos >= 0) {
@@ -323,6 +316,10 @@ function MenosPedidos(ID) {
     qtdElement.appendChild(text);
   }else if(qtd.innerHTML === "0"){
     qtdElement.innerHTML = "";
+    document.getElementById(ID + "SeuPedido").remove();
+    
+  }else{
+    qtdElement.innerHTML = "";
     text = document.createTextNode(qtdPedido + " Pedidos");
     qtdElement.appendChild(text);
   }
@@ -335,7 +332,7 @@ function MenosPedidos(ID) {
   // remove pedido zerado
   var pedidoZerado = document.getElementById(ID + "+");
   if (pedidoZerado) {
-    if (pedidoZerado.innerHTML === "0" ||pedidoZerado.innerHTML === null) {
+    if (pedidoZerado.innerHTML === "0 Pedidos" ||pedidoZerado.innerHTML === null) {
       document.getElementById(ID + "SeuPedido").remove();
 
     }
@@ -353,4 +350,20 @@ function MenosPedidos(ID) {
   }
   // adiciona ao contador a quantidade de pedidos
 
+}
+
+function checkOutZerado() {
+  var checkboxes = document.getElementsByName('Pacote');
+ 
+  for (let i = 0; i < checkboxes.length; i++) {
+    var checkOut = 0;
+  // somente nome da função, sem executar com ()
+  if (checkboxes[i].checked) {
+    checkOut++
+  }
+  if (checkOut === checkbox.length) {
+    
+  }
+  
+};
 }
