@@ -60,6 +60,7 @@ if (numeroPedido.innerText === "") {
   infoPedido.hidden = false;
 }
 var TotalRS;
+
 // Arrays
 var pedidosArray = [];
 var descArray = [];
@@ -84,7 +85,7 @@ function getValues(elemento) {
   } else {
     var idPos = 0;
     idPos = idPedido.indexOf(elemento.id);
-    descArray.splice(idPos,1);
+    descArray.splice(idPos, 1);
     pedidosArray.splice(idPos, 1);
     precoArray.splice(idPos, 1);
     nomeArray.splice(idPos, 1);
@@ -110,6 +111,7 @@ function getValues(elemento) {
     alT.classList.add("col-md-8");
 
   }
+  checkOutZerado()
 }
 
 // Função de listar os pedidos feitos
@@ -156,11 +158,11 @@ function listaDePedidos(elementoID) {
     li.appendChild(buttonMenos);
     li.appendChild(buttonMais);
     // texto dentro das tags
-   
+
     var descricaoText = document.createTextNode(descElement.innerText);
     var nomeDoLancheText = document.createTextNode(nomeElement.innerText);
     var qtdMais = document.createTextNode("1 Pedido");
-   
+
     var valorDoLancheText = document.createTextNode(precoElement.innerText);
     var sinaldeMais = document.createTextNode(" + ");
     var sinaldeMenos = document.createTextNode(" - ");
@@ -171,7 +173,7 @@ function listaDePedidos(elementoID) {
     small.appendChild(descricaoText);
     buttonMais.appendChild(sinaldeMais);
     buttonMenos.appendChild(sinaldeMenos);
-    h5.setAttribute("id",elementoID + "+")
+    h5.setAttribute("id", elementoID + "+")
     buttonMenos.setAttribute("class", "btn btn-outline-info");
     buttonMais.setAttribute("class", "btn btn-outline-info");
     buttonMenos.style.marginRight = "10px";
@@ -194,7 +196,7 @@ function listaDePedidos(elementoID) {
       CalculoPedido();
 
     }
-  
+
   }
 
 }
@@ -245,7 +247,7 @@ function MaisPedidos(ID) {
 
   var text = document.createTextNode(qtdPedido);
   var qtdElement = document.getElementById(ID + "+");
-  
+
   qtdElement.innerHTML = "";
   qtdElement.appendChild(text);
   var qtdPedido = idPedido.length;
@@ -257,18 +259,18 @@ function MaisPedidos(ID) {
   var qtdPedido = 0;
   for (let index = 0; index < idPedido.length; index++) {
     if (idPedido[index] === ID) {
-    qtdPedido++
-    }    
+      qtdPedido++
+    }
   }
 
   var text;
   var qtdElement = document.getElementById(ID + "+");
-  
-  if ( qtd.innerHTML === "1") {
+
+  if (qtd.innerHTML === "1") {
     qtdElement.innerHTML = "";
     text = document.createTextNode(qtdPedido + " Pedido");
     qtdElement.appendChild(text);
-  }else{
+  } else {
     qtdElement.innerHTML = "";
     text = document.createTextNode(qtdPedido + " Pedidos");
     qtdElement.appendChild(text);
@@ -303,28 +305,28 @@ function MenosPedidos(ID) {
   var qtdPedido = 0;
   for (let index = 0; index < idPedido.length; index++) {
     if (idPedido[index] === ID) {
-    qtdPedido++
-    }    
+      qtdPedido++
+    }
   }
 
   var text;
   var qtdElement = document.getElementById(ID + "+");
-  
-  if ( qtd.innerHTML === "1") {
+
+  if (qtd.innerHTML === "1") {
     qtdElement.innerHTML = "";
     text = document.createTextNode(qtdPedido + " Pedido");
     qtdElement.appendChild(text);
-  }else if(qtd.innerHTML === "0"){
+  } else if (qtd.innerHTML === "0") {
     qtdElement.innerHTML = "";
     document.getElementById(ID + "SeuPedido").remove();
-    
-  }else{
+
+  } else {
     qtdElement.innerHTML = "";
     text = document.createTextNode(qtdPedido + " Pedidos");
     qtdElement.appendChild(text);
   }
-  
-  
+
+
   // verifica se zerou os produtos e remove a coluna
   if (TotalRS === 0) {
     document.getElementById(ID + "SeuPedido").remove();
@@ -332,12 +334,12 @@ function MenosPedidos(ID) {
   // remove pedido zerado
   var pedidoZerado = document.getElementById(ID + "+");
   if (pedidoZerado) {
-    if (pedidoZerado.innerHTML === "0 Pedidos" ||pedidoZerado.innerHTML === null) {
+    if (pedidoZerado.innerHTML === "0 Pedidos" || pedidoZerado.innerHTML === null) {
       document.getElementById(ID + "SeuPedido").remove();
 
     }
   }
-  
+
 
   if (numeroPedido.innerText == 0) {
     infoPedido.hidden = true;
@@ -354,16 +356,29 @@ function MenosPedidos(ID) {
 
 function checkOutZerado() {
   var checkboxes = document.getElementsByName('Pacote');
- 
+  var idMarcado = [];
+  var desMarcado = [];
   for (let i = 0; i < checkboxes.length; i++) {
-    var checkOut = 0;
-  // somente nome da função, sem executar com ()
-  if (checkboxes[i].checked) {
-    checkOut++
-  }
-  if (checkOut === checkbox.length) {
-    
+    if (checkboxes[i].checked) {
+     
+      idMarcado.push(checkboxes[i].id); 
+    }
+  };
+  console.log(idMarcado);
+  for (let i = 0; i < checkboxes.length; i++) {
+    if (!checkboxes[i].checked) {
+     
+      desMarcado.push(checkboxes[i].id); 
+
+    }
+  };
+  
+  if (idMarcado.length === checkboxes.length) {
+    console.log("tudo marcado");
+  }else if (desMarcado.length === checkboxes.length) {
+    console.log("tudo desmarcado");
   }
   
-};
+  
+  
 }
