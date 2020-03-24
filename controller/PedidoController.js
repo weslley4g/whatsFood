@@ -350,35 +350,9 @@ function MenosPedidos(ID) {
     alT.classList.remove("col-md-12");
     alT.classList.add("col-md-8");
   }
-  // adiciona ao contador a quantidade de pedidos
-
 }
 
 function checkOutZerado() {
-  var checkboxes = document.getElementsByName('Pacote');
-  var idMarcado = [];
-  var desMarcado = [];
-  for (let i = 0; i < checkboxes.length; i++) {
-    if (checkboxes[i].checked) {
-     
-      idMarcado.push(checkboxes[i].id); 
-    }
-  };
-  console.log(idMarcado);
-  for (let i = 0; i < checkboxes.length; i++) {
-    if (!checkboxes[i].checked) {
-     
-      desMarcado.push(checkboxes[i].id); 
-
-    }
-  };
-  
-  if (idMarcado.length === checkboxes.length) {
-    console.log("tudo marcado");
-  }else if (desMarcado.length === checkboxes.length) {
-    console.log("tudo desmarcado");
-  }
-  
-  
+ 
   
 }
