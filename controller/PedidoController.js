@@ -86,14 +86,17 @@ function getValues(elemento) {
     idPedido.push(elemento.id);
 
   } else {
-    var idPos = 0;
-    idPos = idPedido.indexOf(elemento.id);
-    descArray.splice(idPos, 1);
-    pedidosArray.splice(idPos, 1);
-    precoArray.splice(idPos, 1);
-    nomeArray.splice(idPos, 1);
-    idPedido.splice(idPos, 1);
-    checkOutZerado();
+    for (let i = 0; i< idPedido.length; i++) {
+      var idPos = 0;
+     idPos = idPedido.indexOf(elemento.id);
+     descArray.splice(idPos, 1);
+     pedidosArray.splice(idPos, 1);
+      precoArray.splice(idPos, 1);
+      nomeArray.splice(idPos, 1);
+      idPedido.splice(idPos, 1);
+      checkOutZerado(elemento.id);
+    }
+    
   }
   // listar os pedidos feitos
   listaDePedidos(elementoID);
@@ -115,7 +118,7 @@ function getValues(elemento) {
     alT.classList.add("col-md-8");
 
   }
-  checkOutZerado()
+  
 }
 
 // Função de listar os pedidos feitos
@@ -356,8 +359,7 @@ function MenosPedidos(ID) {
   }
 }
 
-function checkOutZerado() {
-  console.log('oi');
+function checkOutZerado(id) {
+  console.log(id);
 }
 
-checkOutZerado();
