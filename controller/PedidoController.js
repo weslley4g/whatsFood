@@ -71,7 +71,7 @@ var idPedido = [];
 function getValues(elemento) {
   
   elementoID = elemento.id;
- 
+  
   // buscando os elementos no HTML
   var pedidoElement = document.getElementById(elemento.id);
   var descElement = document.getElementById(elemento.id + "D");
@@ -86,17 +86,8 @@ function getValues(elemento) {
     idPedido.push(elemento.id);
 
   } else {
-    for (let i = 0; i< idPedido.length; i++) {
-      var idPos = 0;
-     idPos = idPedido.indexOf(elemento.id);
-     descArray.splice(idPos, 1);
-     pedidosArray.splice(idPos, 1);
-      precoArray.splice(idPos, 1);
-      nomeArray.splice(idPos, 1);
-      idPedido.splice(idPos, 1);
-      checkOutZerado(elemento.id);
-    }
     
+    checkOutZerado(elementoID);
   }
   // listar os pedidos feitos
   listaDePedidos(elementoID);
@@ -118,7 +109,6 @@ function getValues(elemento) {
     alT.classList.add("col-md-8");
 
   }
-  
 }
 
 // Função de listar os pedidos feitos
@@ -360,6 +350,30 @@ function MenosPedidos(ID) {
 }
 
 function checkOutZerado(id) {
-  console.log(id);
+
+  let pedidoElement = document.getElementById(id);
+  var descElement = document.getElementById(id + "D");
+  var precoElement = document.getElementById(id + "P");
+  var nomeElement = document.getElementById(id + 'N');
+
+
+// pedidosArray
+
+//--------------------------------------------
+
+  let indicePedido = pedidosArray.indexOf(pedidoElement.value);
+
+  while(indicePedido >= 0){
+    pedidosArray.splice(indicePedido, 1);
+    descElement.splice(indicePedido, 1);
+    precoElement.splice(indicePedido, 1);
+    nomeElement.splice(indicePedido, 1);
+    indicePedido = pedidosArray.indexOf(pedidoElement.value);
+    console.log(pedidosArray);
+  }
+//--------------------------------------------
+
+//--------------------------------------------
+CalculoPedido();
 }
 

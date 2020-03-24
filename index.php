@@ -165,7 +165,7 @@ $products = [
                                     <li>
                                         <div class="col-md-12">
                                             <input type="checkbox"  name="Pacote" id="cb<?php echo $products[$key]['id']; ?>" value="<?php echo $products[$key]['valor'] ?>" />
-                                            <label for="cb<?php echo $products[$key]['id']; ?>" id="<?php echo $products[$key]['id']; ?>L" class="label">
+                                            <label for="cb<?php echo $products[$key]['id']; ?>" id="cb<?php echo $products[$key]['id']; ?>L" class="label">
                                                 <img src="<?php echo $products[$key]['img'];?>" />
                                                 <p><b name="preco" id="cb<?php echo $products[$key]['id']; ?>P"> R$:<?php echo $products[$key]['valor'] . ",00"; ?></b></p>
                                                 <p name="nome" id="cb<?php echo $products[$key]['id']; ?>N"><?php echo $products[$key]['nome']; ?></p>
