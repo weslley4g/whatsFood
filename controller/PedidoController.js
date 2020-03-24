@@ -350,30 +350,19 @@ function MenosPedidos(ID) {
 }
 
 function checkOutZerado(id) {
-
-  let pedidoElement = document.getElementById(id);
-  var descElement = document.getElementById(id + "D");
-  var precoElement = document.getElementById(id + "P");
-  var nomeElement = document.getElementById(id + 'N');
-
-
-// pedidosArray
-
 //--------------------------------------------
+console.log(pedidosArray);
+  let indice = idPedido.indexOf(id);
 
-  let indicePedido = pedidosArray.indexOf(pedidoElement.value);
-
-  while(indicePedido >= 0){
-    pedidosArray.splice(indicePedido, 1);
-    descElement.splice(indicePedido, 1);
-    precoElement.splice(indicePedido, 1);
-    nomeElement.splice(indicePedido, 1);
-    indicePedido = pedidosArray.indexOf(pedidoElement.value);
-    console.log(pedidosArray);
+  while(indice >= 0){
+    idPedido.splice(indice, 1);
+    pedidosArray.splice(indice, 1);
+    descArray.splice(indice, 1);
+    precoArray.splice(indice, 1);
+    nomeArray.splice(indice, 1);
+    
+    indice = idPedido.indexOf(id);
+    console.log(idPedido);
   }
-//--------------------------------------------
-
-//--------------------------------------------
-CalculoPedido();
 }
 
