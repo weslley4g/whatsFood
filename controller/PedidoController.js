@@ -69,7 +69,9 @@ var nomeArray = [];
 var idPedido = [];
 
 function getValues(elemento) {
+  
   elementoID = elemento.id;
+ 
   // buscando os elementos no HTML
   var pedidoElement = document.getElementById(elemento.id);
   var descElement = document.getElementById(elemento.id + "D");
@@ -82,6 +84,7 @@ function getValues(elemento) {
     precoArray.push(precoElement.innerText);
     nomeArray.push(nomeElement.innerText);
     idPedido.push(elemento.id);
+
   } else {
     var idPos = 0;
     idPos = idPedido.indexOf(elemento.id);
@@ -90,6 +93,7 @@ function getValues(elemento) {
     precoArray.splice(idPos, 1);
     nomeArray.splice(idPos, 1);
     idPedido.splice(idPos, 1);
+    checkOutZerado();
   }
   // listar os pedidos feitos
   listaDePedidos(elementoID);
@@ -353,6 +357,7 @@ function MenosPedidos(ID) {
 }
 
 function checkOutZerado() {
- 
-  
+  console.log('oi');
 }
+
+checkOutZerado();

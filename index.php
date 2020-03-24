@@ -52,8 +52,7 @@ $products = [
     <meta name="author" content="weslley">
     <meta property="og:image" content="https://pbs.twimg.com/profile_images/564976605479460865/6ZgfAF6b.png">
 
-    <script type="text/javascript" nonce="c8b10c42db9444bb942ef6d30d0" src="//local.adguard.org?ts=1580265532925&amp;type=content-script&amp;dmn=getbootstrap.com&amp;css=1&amp;js=1&amp;gcss=1&amp;rel=1&amp;rji=1&amp;stealth=1&amp;uag="></script>
-    <script type="text/javascript" nonce="c8b10c42db9444bb942ef6d30d0" src="//local.adguard.org?ts=1580265532925&amp;name=AdGuard%20Popup%20Blocker&amp;name=AdGuard%20Extra&amp;type=user-script"></script>
+   
     <link rel="icon" href="./assets/img/whatsfood.png">
 
     <title>WhatsFood</title>
@@ -215,12 +214,8 @@ $products = [
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <!--
-    <script>window.jQuery || document.write('<script src="./assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
-    <script src="./assets/js/vendor/popper.min.js"></script>
-    <script src="./dist/js/bootstrap.min.js"></script>
-    <script src="./assets/js/vendor/holder.min.js"></script>
-    -->
+    
+    
     <script src="./assets/js/bootstrap.min.js"></script>
     <script src="./controller/PedidoController.js"></script>
     <script>
