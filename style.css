@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*
 parte de segurança
 */
@@ -120,4 +121,128 @@ input[type="checkbox"][id^="cb"] {
 }
 .box{
   margin: 0 auto;
+=======
+/*
+parte de segurança
+*/
+
+/*desabilita a seleção no body*/
+body {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Chrome/Safari/Opera */
+     -khtml-user-select: none; /* Konqueror */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none;
+}
+
+/*habilita a seleção nos campos editaveis*/
+input, textarea {
+  -webkit-touch-callout: initial; /* iOS Safari */
+    -webkit-user-select: text; /* Chrome/Safari/Opera */
+     -khtml-user-select: text; /* Konqueror */
+       -moz-user-select: text; /* Firefox */
+        -ms-user-select: text; /* Internet Explorer/Edge */
+            user-select: text;
+}
+
+/*habilita a seleção nos campos com o atributo contenteditable*/
+[contenteditable=true] {
+  -webkit-touch-callout: initial; /* iOS Safari */
+    -webkit-user-select: all; /* Chrome/Safari/Opera */
+     -khtml-user-select: all; /* Konqueror */
+       -moz-user-select: all; /* Firefox */
+        -ms-user-select: all; /* Internet Explorer/Edge */
+            user-select: all;
+}
+
+
+/*
+ fim da parte de segurança
+*/
+ul {
+  list-style-type: none;
+}
+.a, .a:visited, .a:link{
+  text-decoration: none;
+  color:#fff; 
+}
+li {
+  display: list-item;
+}
+
+input[type="checkbox"][id^="cb"] {
+ display: none; 
+}
+
+.label {
+  border:1px solid #000;
+  padding: 10px;
+  display: block;
+  position: relative;
+  margin: 10px;
+
+  cursor: pointer;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.label::before {
+  background-color: transparent;
+  color: white;
+  content: "   ";
+  display: block;
+  border-radius: 50%;
+  border: 1px solid #007bff;
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  width: 25px;
+  height: 25px;
+  text-align: center;
+  line-height: 28px;
+  transition-duration: 0.4s;
+  transform: scale(0);
+}
+
+.label img {
+  height: 100px;
+  width: 100px;
+  transition-duration: 0.6s;
+  transform-origin: 50% 50%;
+}
+
+:checked+.label {
+  border-color: #007bff;
+}
+
+:checked+.label::before {
+  content: "✓";
+  background-color: #007bff;
+  transform: scale(1);
+}
+
+:checked+.label img {
+  transform: scale(0.9);
+  box-shadow: 0 0 5px #007bff;
+  z-index: -1;
+}
+
+.total{
+  flex-direction: row !important;
+}
+#valor{
+  margin-left: 50%;
+}
+.preco{
+  font-weight: bold;
+  margin: 10px 10px 10px 10px;
+}
+.box{
+  margin: 0 auto;
+>>>>>>> e91a6a3fa6c6f33da845d4a06c3bdc08cebc6481
 }
