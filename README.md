@@ -73,7 +73,7 @@ Alertas de promoções 🔔.
 <hr> 
 </br> 
 
-## Mobile 📲.
+## Mobile 📲:
 
 </br>
 <hr>
