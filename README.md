@@ -1,6 +1,6 @@
 # whatsFood
 
-> Um sistema Web para envio de `Pedidos` com encaminhamento direto para o  <h3>`whatsapp`</h3> 
+> Um sistema Web para envio de <b>`Pedidos`</b> com encaminhamento direto para o  <b>`whatsapp`</b> 
 
 ## Funcionamento
 
