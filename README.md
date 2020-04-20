@@ -51,13 +51,13 @@ Para usar o whatsFood não precisa de nenhum requisito especial de qualquer luga
 <table>
  <tr>
       <td>
-      <img src="printstela/webMobileEntrega.PNG">
-      </td>
-      <td>
-      <img src="printstela/webMobileFim.PNG">
-      </td>
-      <td>
       <img src="printstela/webMobileInicio.PNG">
+      </td>
+      <td>
+      <img src="printstela/webMobileRetirada.PNG">
+      </td>
+      <td>
+      <img src="printstela/webMobileEntrega.PNG">
       </td>
  </tr>
  <tr>
@@ -68,12 +68,12 @@ Para usar o whatsFood não precisa de nenhum requisito especial de qualquer luga
       <img src="printstela/webMobilePedido.PNG">
       </td>
       <td>
-      <img src="printstela/webMobileRetirada.PNG">
+      <img src="printstela/webMobileTotal.PNG">
       </td>
  </tr>
  <tr>
       <td>
-      <img src="printstela/webMobileTotal.PNG">
+      <img src="printstela/webMobileFim.PNG">
       </td>
  </tr>
 </table>
