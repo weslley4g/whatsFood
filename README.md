@@ -20,33 +20,40 @@ Para usar o whatsFood não precisa de nenhum requisito especial de qualquer luga
 ## ScreenShots (prints de tela)
 
 <table>
-  <tr>
+ <tr>
     <td>
       <img src="printstela/webDesktopEndereco.PNG">
     </td>
     <td>
       <img src="printstela/webDesktopFim.PNG">
     </td>
+ </tr>
+ <tr>
     <td>
       <img src="printstela/webDesktopInicio.PNG">
-    </td>
+    </td>    
       <td>
       <img src="printstela/webDesktopRetirada.PNG">
     </td>
-   </tr>
-   <tr>
+ </tr>
+    <br>
+ <tr>
       <td>
       <img src="printstela/webMobileEntrega.PNG">
     </td>
       <td>
       <img src="printstela/webMobileFim.PNG">
     </td>
+   </tr>
+   <tr>
       <td>
       <img src="printstela/webMobileInicio.PNG">
     </td>
       <td>
       <img src="printstela/webMobileMeio.PNG">
     </td>
+  </tr>
+  <tr>
       <td>
       <img src="printstela/webMobilePedido.PNG">
     </td>
