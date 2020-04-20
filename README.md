@@ -43,7 +43,9 @@ Alertas de promoções 🔔.
 
 </br>
 <hr>
-<h3><b>Desktop</b> 💻</h3>
+
+## Desktop 💻:
+
 </br>
 <hr>
 <table>
@@ -70,7 +72,9 @@ Alertas de promoções 🔔.
 </table>
 <hr> 
 </br> 
- <h3><b>Mobile</b> 📲</h3>
+
+## Mobile 📲.
+
 </br>
 <hr>
 <table>
