@@ -16,7 +16,9 @@ Para usar o whatsFood não precisa de nenhum requisito especial de qualquer luga
     </br>
     
 ```
-<b>¹</b> Com o <b>`WhatsFood`</b> o cliente tem seu pedido calculado em tempo de execução sendo assim sabe quanto tera que pagar                          enquanto escolhe o lanche 📋💲
+Com o WhatsFood o cliente tem seu pedido calculado 
+em tempo de execução sendo assim sabe quanto tera que pagar 
+enquanto escolhe o lanche 📋💲.
 ```
     
 </br>
