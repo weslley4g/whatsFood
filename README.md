@@ -15,7 +15,7 @@ Para usar o whatsFood não precisa de nenhum requisito especial de qualquer luga
 - O <b>`WhatsFood`</b> é conpativel com aparelhos <b>`Mobile`</b>, veja uma das vantagens do <b>`WhatsFood`</b>.
 </br>
     
-##¹
+## ¹°
 
 ```
 Com o WhatsFood o cliente tem seu pedido calculado 
@@ -25,14 +25,14 @@ enquanto escolhe o lanche 📋💲.
     
 </br>
 
-## ²
+## ²°
 
 ```
 Interface minimalista e simples 😉.
 ```
 </br>
 
-## ³
+## ³°
 
 ```
 Alertas de promoções 🔔.
