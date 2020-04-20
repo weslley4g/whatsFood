@@ -1,235 +1,141 @@
 # whatsFood
 um sistema para pedidos de lanche com encaminhamento direto para o whatsapp 
 
-<html lang="pt-br">
+# Markdown to GitHub style web
 
-<head>
-</head>
+> Because GitHub's `README` styling is actually really nice
 
-<body >
-    <div class="container">
+## Background
 
-        <div class="py-5 text-center">
-            <img class="d-block mx-auto mb-4" src="./assets/img/icone2.png" alt="" width="350" height="200">
-            <h1>WhatsFood</h1>
-            <h5>Seja bem vindo!</h5>
-            <p class="lead"><b>Preencha o formulario a baixo:</b></p>
-        </div>
+[![](https://img.shields.io/badge/author-@KrauseFx-blue.svg?style=flat)](https://twitter.com/KrauseFx)
 
-        <div class="row py-5 text-center">
+If you have a little side project, often you might want a simple landing page. The GitHub `README` rendering is really beautifully done: clean, simple and modern. The official [GitHub markdown to HTML API](https://developer.github.com/v3/markdown/) generates the HTML code, but not the stylesheets necessary to make it look nice.
 
-            <div class="col-md-12 order-md-1" id="alT">
+Using your GitHub `README` as the main landing point works great for open source projects, where your visitors are developers and are familiar with GitHub, as well as you have all the text right where the code, the Issues and PRs are. But for some projects this isn't ideal. I built this project within a few hours for myself to get [WalkWithFriends](https://walkwithfriends.net/) off the ground fast, without investing in building an actual website, or using a bloated website builder.
 
-                <form class="needs-validation" novalidate action="./controller/FinalizarPedido.php" method="POST">
+Some issues you run into when using GitHub as your main landing page
 
-                    <div class="row">
-                        <div class="col-md-6 mb-3">
-                            <label for="firstName"><strong>* Nome :</strong></label>
-                            <input type="text" class="form-control" name="firstName" id="firstName" placeholder="Digite seu nome" value="" required>
-                            <div class="invalid-feedback">
-                                Nome é Obrigatório!
-                            </div>
-                        </div>
-                        <div class="col-md-6 mb-3">
-                            <label for="lastName"><strong>* Sobrenome :</strong></label>
-                            <input type="text" class="form-control" name="lastName" id="lastName" placeholder="Digite seu sobrenome" value="" required>
-                            <div class="invalid-feedback">
-                                Sobrenome é Obrigatório!
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6 mb-3">
-                            <label for="celular"><strong>* Celular :</strong></label>
-                            <input type="tel" class="form-control" name="telefone" id="telefone" placeholder="(DD) XXXXX-XXXX" maxlength="15" required>
-                            <div class="invalid-feedback">
-                                Celular é Obrigatório!
-                            </div>
-                        </div>
-                        <div class="col-md-6 mb-3">
-                            <label for="ER"><strong>* Entrega ou retirada no local :</strong></label>
+- Maybe your project isn't actually an open source project, so you can't just host a `README` on GitHub
+- If you want to link to just the `README`, you could append `#readme` to your browser URL (making the URL less pretty), or the visitor has to know they have to scroll down
+- The mobile page of GitHub is still pretty bad, and it only renders the first few lines, as soon as you have a logo and badges on your page, it doesn't render at all, unless the visitor hits `View all of `README`.md`
+    - Non-tech visitors don't know what's a `README.md`
+    - The button is small, and people don't know what is
+    - GitHub renders the GitHub Pulse below, something that doens't make sense for non-tech visitors
+    - The URL changes from something nice like `github.com/krausefx/fastlane` to `github.com/krausefx/fastlane/blob/master/README.md`, meaning you can either link directly to this page to have a nice content, or you link to the root page and have the downside of the extra buttons
+    - [Nat announced](https://twitter.com/natfriedman/status/1126544306712350721), that they working on improving the mobile experience, which is great news for everybody :)
+- You can't use your own domain
+- If you use your own domain, you have to use GitHub Pages (which is excellent btw), but then you have to have HTML files ready, which is exactly what this project solves.
 
-                            <select class="custom-select d-block w-100" name="ER" id="ER" required>
-                                <option value="">Selecione</option>
-                                <option value="entrega">Entrega</option>
-                                <option value="retirada no local">Retirada no local</option>
-                            </select>
-                            <div class="invalid-feedback">
-                                Por favor selecione a opção desejada!
-                            </div>
-                        </div>
+## Solution
 
-                        <div class="col-md-12 mb-3" id="Maps" hidden>
+A simple script that converts a markdown (`.md`) file to a single HTML file, that includes all the HTML and CSS code inline, so you can host it anywhere.
 
-                            <label for="address"><strong>* CEP :</strong></label>
-                            <input type="tel" class="form-control" name="cep" id="cep" onkeypress="$(this).mask('00.000-000')" ontouchstart="$(this).mask('00.000-000')" placeholder="Digite apenas o seu cep! ex: 35271589">
-                            <label for="address"><strong>* Rua :</strong></label>
-                            <input value="" type="text" class="form-control" name="rua" id="rua" placeholder="Digite apenas o nome da sua rua! ex: Rua sao luiz">
+There is no need to use this script if you already convert your markdown file to HTML, you can directly use the [stylesheet](https://github.com/KrauseFx/markdown-to-html-github-style/blob/master/style.css) of this repo.
 
-                            <div class="invalid-feedback">
-                                Por favor entre com o endereço pois é Obrigatório!
-                            </div>
+## How it works
 
-                            <label for="local"><strong>* Bairro :</strong></label>
+This project doesn't actually use the GitHub stylesheet, it's far too complex, and has legal implications.
 
-                            <input class="form-control" type="text" readonly name="local" id="local">
+Instead this project does 2 things:
 
+- Convert the Markdown to HTML using [showdown](https://github.com/showdownjs/showdown), the most popular JS markdown parser. This could be replaced by the [official GitHub markdown to HTML API](https://github.com/KrauseFx/markdown-to-html-github-style/issues/2)
+- Inject the GitHub-like CSS code at the bottom of the page
 
-                            <div class="invalid-feedback">
-                                Por favor selecione a opção desejada!
-                            </div>
+Resulting you get an HTML file that contains everything needed, so you can host the page on GitHub pages, AWS S3, Google Cloud Storage or anywhere else.
 
-                            <label for="complemento"><strong>Complemento :</strong></label>
-                            <small class="text-muted">(opcional!)</small>
-                            <textarea class="form-control" id="complemento" name="complemento" rows="3"></textarea>
-                            <br><br>
-                            <div id="boxGeolocal" class="row">
-                                <div class="col-md-12 mb-3">
-                                    <div class="col-md-6 mb-3">
-                                        <label for="localizacao">
-                                            Para que a entrega seja feita
-                                            em sua residência
-                                            permita o acesso a sua
-                                            localização atual clicando
-                                            no botão <b>LOCALIZAÇÃO</b>.
-                                        </label>
-                                    </div>
-                                    <div class="col-md-6 mb-3">
-                                        <a id="localizacao" class="btn buttonElement  ">
-                                            <span class="btn-label">
-                                                <i class="fas fa-map-marked-alt"></i>
-                                            </span>
-                                            Localização
-                                        </a>
-                                        <br>
-                                        <input class="form-control" name="latLong" id="latLong" type="text" hidden>
-                                        <br>
-                                        <div class="invalid-feedback">
-                                            <h6>* Por favor permita o acesso a sua localização!</h6>
-                                        </div>
-                                    </div>
-                                    <!-- alerta de Sucesso -->
-                                    <div id="mapaAlertSuccess" class="alert alert-success fadeblock" role="alert" hidden>
-                                        Sua <b>LOCALIZAÇÃO</b> foi compartilhada com sucesso!
-                                    </div>
-                                    <!-- alerta de error -->
-                                    <div id="mapaAlertDanger" class="alert alert-danger fadeblock" role="alert" hidden>
-                                        Sua <b>LOCALIZAÇÃO</b> não pode ser compartilhada!
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <input type="text" id="lancheForm" name="lancheForm" hidden>
-                    </div>
-                    <hr class="mb-4">
-                   
-                            <div class="col-md-12 order-md-2 mb-4" id="InfoPedido">
-                                <h4 class="d-flex justify-content-between align-items-center mb-3">
-                                    <span class="text-muted">Total de pedido(s)</span>
-                                    <span class="badge badge-secondary badge-pill" id="qtdPedido"></span>
-                                </h4>
-                                <ul class="list-group mb-3" id="listPedidos">
-                                </ul>
-                            </div>
-                            <div class="col-md-12 mb-3">
-                                <label for="ObsL"><strong>Qualquer observação
-                                        sobre os lanches pode nos falar:</strong></label>
-                                <small class="text-muted">(Fique atento a <b>descrição</b> dos lanches)!</small>
-                                <textarea class="form-control" id="ObsL" name="ObsL" rows="4" placeholder="EX: 2 x-tudo, 1 sem bacon e sem calabresa e o outro completo..."></textarea>
-                            </div>
-                            <br>
-                        </div>
-                    </div>
-                    <hr>
-                    <br>
-                    <div class="col-md-12 mb-3">
-                        <div class="col-md-12 mb-3">
-                            <label for="localizacao">
-                                Se desejar receber Promoções basta clicar
-                                no botão <b>NOTIFICAÇÃO</b>.
-                            </label>
-                        </div>
-                        <div class="col-md-12 mb-3">
-                            <input type="text" name="pushN" id="pushN" hidden>
-                            <a id="notificacao" class=" sp_notify_prompt btn buttonElement">
-                                <span class='btn-label'>
-                                    <i class='fas fa-comment'></i>
-                                </span>Ativar <b>Notificação</b>
-                            </a>
+- Check out [the original markdown](https://github.com/KrauseFx/markdown-to-html-github-style/blob/master/README.md?raw=1) file of this `README`
+- Check out the [raw generated HTML code](https://github.com/KrauseFx/markdown-to-html-github-style/blob/master/index.html) generated based on this markdown file on
+- Check out the [GitHub rendered README](https://github.com/KrauseFx/markdown-to-html-github-style)
+- Check out the [README rendered by this project](https://markdown-to-github-style-web.com)
 
-                        </div>
-                        <!-- alerta de Sucesso -->
-                        <div id="notifyAlertSuccess" class="alert alert-success fadeblock" role="alert" hidden>
-                            <b>NOTIFICAÇÃO</b> Permitita com sucesso!
-                        </div>
-                    </div>
-                    <hr>
-                    <br>
-                    <hr class="mb-4">
-                    <h4 class="mb-3 ">* Forma de pagamento:</h4>
-                    <div class="d-block my-3">
-                        <div class="custom-control custom-radio">
-                            <input value="Credito" id="credito" name="paymentMethod" type="radio" class="custom-control-input" required>
-                            <label class="custom-control-label" for="credito">Crédito</label>
-                        </div>
-                        <div class="custom-control custom-radio">
-                            <input value="Debito" id="debito" name="paymentMethod" type="radio" class="custom-control-input" required>
-                            <label class="custom-control-label" for="debito">Débito</label>
-                        </div>
-                        <div class="custom-control custom-radio">
-                            <input value="Dinheiro" id="dinheiro" name="paymentMethod" type="radio" class="custom-control-input" required>
-                            <label class="custom-control-label" for="dinheiro">Dinheiro</label>
-                        </div>
-                    </div>
-                    <div class=" input-group col-md-3 mb-3" id="boxtroco" hidden>
-                        <label for="troco">Troco para quanto?</label>
-                        <div class="input-group mb-3">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text">R$</span>
-                            </div>
-                            <input id="troco" name="troco" type="tel" class="form-control" onkeypress="$(this).mask('0#0.0#', {reverse: true})" ontouchstart="$(this).mask(' ##0.00', {reverse: true})">
-                            <input type="text" name="calcTroco" id="calcTroco" hidden readonly>
-                            <div class="invalid-feedback">
-                                Por favor informe o valor!
-                            </div>
-                        </div>
-                        <div id="TrocoDanger" class="alert alert-danger fadeblock" role="alert" hidden>
-                            O <b>VALOR</b> informado é menor do que o valor total da compra!
-                        </div>
-                    </div>
-                    <hr class="mb-4">
-                    <h4 class="mb-3">* Escolheu seu lanche?</h4>
-                    <div class="d-block my-3">
+## Dependencies
 
-                        <div class="custom-control custom-radio">
-                            <input value="sim" id="sim" name="radios" type="radio" class="custom-control-input" required>
-                            <label class="custom-control-label" for="sim">Sim</label>
-                        </div>
-                        <div class="custom-control custom-radio">
-                            <input value="nao" id="nao" name="radios" type="radio" class="custom-control-input" required>
-                            <label class="custom-control-label" for="nao">Não</label>
-                        </div>
-                    </div>
-                    <hr class="mb-4">
-                    <br>
-                    <button id="finalizar" class="btn btn-primary btn-lg btn-block" type="submit">Finalizar Pedido</button>
-                </form>
+```
+npm install
+```
 
+## Usage
 
-            </div>
-        </div>
-        <footer class="my-5 pt-5 text-muted text-center text-small">
-            <p class="mb-1">&copy; 2018-2020 WZSI</p>
-            <ul class="list-inline">
-                <li class="list-inline-item printd"><a href="#">Privacy</a></li>
-                <li class="list-inline-item printd"><a href="#">Terms</a></li>
-                <li class="list-inline-item printd"><a href="#">Support</a></li>
-            </ul>
-        </footer>
-        <a href="#" class="scrollToTop"><i class="fas fa-arrow-circle-up"></i></a>
-    </div>
-</body>
+```
+node convert.js MyPageTitle
+```
 
-</html>
+This will read the `README.md` from your current working directory and output the resulting HTML as `README.html` in the same directory.
+
+## Open tasks
+
+Check out the [open issues](https://github.com/KrauseFx/markdown-to-html-github-style/issues), in particular code blocks currently don't support syntax highlighting, however that's something that's rather easy to add. For a minimalistic stylesheet we could take the styles from [krausefx.com css](https://github.com/KrauseFx/krausefx.com/blob/021186e228e183904af68ad8fc500c35107f00ae/assets/main.scss#L345-L438).
+
+## Playground to test
+
+```
+{
+  testcode: 1
+}
+```
+
+- Bullet list item 1
+- Bullet list item 2
+    - Bullet list item 2.1
+    - Bullet list item 2.2
+
+---
+
+1. Numbered list item 1
+1. Numbered list item 2
+
+Inline `code` comments are `100`
+
+> Quoted texts are more gray and look differently
+
+**Bold text** is **bold** and [inline links](https://krausefx.com) work as well.
+
+# Header 1
+## Header 2
+### Header 3
+#### Header 4
+##### Header 5
+
+<table>
+  <tr>
+    <td>
+      <img src="demo/screenshot1_framed.jpg">
+    </td>
+    <td>
+      <img src="demo/screenshot2_framed.jpg">
+    </td>
+    <td>
+      <img src="demo/screenshot3_framed.jpg">
+    </td>
+  </tr>
+</table>
+
+Normal text content again, lorem ipsum
+
+<table>
+  <tr>
+    <th>
+      Text 1
+    </th>
+    <th>
+      Text 2
+    </th>
+    <th>
+      Text 3
+    </th>
+  </tr>
+  <tr>
+    <td>
+      Text 1
+    </td>
+    <td>
+      Text 2
+    </td>
+    <td>
+      Text 3
+    </td>
+  </tr>
+  <tr>
+    <td>
+      Text 1
+    </td>
