@@ -12,10 +12,10 @@ Para usar o whatsFood não precisa de nenhum requisito especial de qualquer luga
 
 - Com  <b>`WhatsFood`</b> o cliente pode pedir o lanche para entrega ou retirada no local tudo isso na hora de realizar seu pedido.
 - Se o cliente optar por entrega o <b>`WhatsFood`</b> enviara sua localização fixa para o entregador achalo mais facilmente.
-- O <b>`WhatsFood`</b> é conpativel com aparelhos <b>`Mobile`</b>, veja uma das vantagens do <b>`WhatsFood`</b>.
+- O <b>`WhatsFood`</b> é conpativel com aparelhos <b>`Mobile`</b>, veja uma das vantagens do <b>`WhatsFood`</b> a baixo.
 </br>
     
-## ¹°
+## 1️⃣
 
 ```
 Com o WhatsFood o cliente tem seu pedido calculado 
@@ -25,14 +25,14 @@ enquanto escolhe o lanche 📋💲.
     
 </br>
 
-## ²°
+## 2️⃣
 
 ```
 Interface minimalista e simples 😉.
 ```
 </br>
 
-## ³°
+## 3️⃣
 
 ```
 Alertas de promoções 🔔.
