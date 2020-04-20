@@ -22,13 +22,37 @@ Para usar o whatsFood não precisa de nenhum requisito especial de qualquer luga
 <table>
   <tr>
     <td>
-      <img src="demo/screenshot1_framed.jpg">
+      <img src="printstela/webDesktopEndereco.PNG">
     </td>
     <td>
-      <img src="demo/screenshot2_framed.jpg">
+      <img src="printstela/webDesktopFim.PNG">
     </td>
     <td>
-      <img src="demo/screenshot3_framed.jpg">
+      <img src="printstela/webDesktopInicio.PNG">
+    </td>
+      <td>
+      <img src="printstela/webDesktopRetirada.PNG">
+    </td>
+      <td>
+      <img src="printstela/webMobileEntrega.PNG">
+    </td>
+      <td>
+      <img src="printstela/webMobileFim.PNG">
+    </td>
+      <td>
+      <img src="printstela/webMobileInicio.PNG">
+    </td>
+      <td>
+      <img src="printstela/webMobileMeio.PNG">
+    </td>
+      <td>
+      <img src="printstela/webMobilePedido.PNG">
+    </td>
+      <td>
+      <img src="printstela/webMobileRetirada.PNG">
+    </td>
+      <td>
+      <img src="printstela/webMobileTotal.PNG">
     </td>
   </tr>
 </table>
