@@ -17,7 +17,9 @@ Para usar o whatsFood não precisa de nenhum requisito especial de qualquer luga
     - Interface minimalista e simples.
     - Alertas de promoções
     
-## ScreenShots (prints de tela)
+## ScreenShots (prints de tela):
+</br>
+### Desktop
 
 <table>
  <tr>
@@ -36,7 +38,10 @@ Para usar o whatsFood não precisa de nenhum requisito especial de qualquer luga
       <img src="printstela/webDesktopRetirada.PNG">
     </td>
  </tr>
-    <br>
+</table>
+    </br>
+    ### Mobile
+<table>
  <tr>
       <td>
       <img src="printstela/webMobileEntrega.PNG">
