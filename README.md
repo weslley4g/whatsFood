@@ -19,7 +19,7 @@ Para usar o whatsFood não precisa de nenhum requisito especial de qualquer luga
     
 ## ScreenShots (prints de tela):
 </br>
-
+<hr>
 <h3><b>Desktop</b> 💻</h3>
 </br>
 <hr>
@@ -45,10 +45,8 @@ Para usar o whatsFood não precisa de nenhum requisito especial de qualquer luga
     </td>
  </tr>
 </table>
-
-</br>
-<hr>
-    
+<hr> 
+</br> 
  <h3><b>Mobile</b> 📲</h3>
 </br>
 <hr>
