@@ -1,9 +1,6 @@
 # whatsFood
-um sistema para pedidos de lanche com encaminhamento direto para o whatsapp 
 
-# Markdown to GitHub style web
-
-> Because GitHub's `README` styling is actually really nice
+> Um siatema Web para envio de `Pedidos` com encaminhamento direto para o whatsapp 
 
 ## Background
 
