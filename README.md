@@ -6,14 +6,14 @@
 
 O cliente inicia uma conversa com o estabelecimento de modo automatico o estabelecimento envia uma menssagem com o link de forma estantanea para o cliente, assim o cliente entra no site e realiza seu pedido apos finalizar ele é direcionado para o whatsapp com seu pedido realizado e apenas envia seu pedido para o estabelecimento.
 
-Usando o `WhatsFood` os estabelecimentos tende a economizar mais tenpo em seus pedidos.
+Usando o <b>`WhatsFood`</b> os estabelecimentos tende a economizar mais tenpo em seus pedidos.
 
 Para usar o whatsFood não precisa de nenhum requisito especial de qualquer lugar e qualquer plataforma pode-se usar.
 
-- Com  `WhatsFood`o cliente pode pedir o lanche para entrega ou retirada no local tudo isso na hora de realizar seu pedido.
-- Se o cliente optar por entrega o `WhatsFood` enviara sua localização fixa para o entregador achalo mais facilmente.
-- O `WhatsFood` é conpativel com aparelhos `Mobile`, veja uma das vantagens do WhatsFood.
-    - Com o `WhatsFood` o cliente tem seu pedido calculado em tempo de execução sendo assim sabe quanto tera que pagar enquanto escolhe         o lanche 📋💲
+- Com  <b>`WhatsFood`</b> o cliente pode pedir o lanche para entrega ou retirada no local tudo isso na hora de realizar seu pedido.
+- Se o cliente optar por entrega o <b>`WhatsFood`</b> enviara sua localização fixa para o entregador achalo mais facilmente.
+- O <b>`WhatsFood`</b> é conpativel com aparelhos `Mobile`, veja uma das vantagens do <b>`WhatsFood`</b>.
+    - Com o <b>`WhatsFood`</b> o cliente tem seu pedido calculado em tempo de execução sendo assim sabe quanto tera que pagar enquanto         escolhe o lanche 📋💲
     - Interface minimalista e simples.
     - Alertas de promoções 🔔.
     
@@ -21,7 +21,8 @@ Para usar o whatsFood não precisa de nenhum requisito especial de qualquer luga
 </br>
 
 <h3><b>Desktop</b> 💻</h3>
-
+</br>
+<hr>
 <table>
  <tr>
     <td>
@@ -44,10 +45,13 @@ Para usar o whatsFood não precisa de nenhum requisito especial de qualquer luga
     </td>
  </tr>
 </table>
-    </br>
+
+</br>
+<hr>
     
  <h3><b>Mobile</b> 📲</h3>
-    
+</br>
+<hr>
 <table>
  <tr>
       <td>
@@ -78,6 +82,8 @@ Para usar o whatsFood não precisa de nenhum requisito especial de qualquer luga
  </tr>
 </table>
 
+</br>
+<hr>
 
 ## Dependencies
 
