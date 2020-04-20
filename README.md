@@ -33,6 +33,8 @@ Para usar o whatsFood não precisa de nenhum requisito especial de qualquer luga
       <td>
       <img src="printstela/webDesktopRetirada.PNG">
     </td>
+   </tr>
+   <tr>
       <td>
       <img src="printstela/webMobileEntrega.PNG">
     </td>
